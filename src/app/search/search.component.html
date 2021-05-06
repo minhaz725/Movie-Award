@@ -1,0 +1,24 @@
+<div class="form-group has-search">
+  <span class="fa fa-search form-control-feedback"></span>
+  <input  type="text" #box class="search-bar form-control" placeholder="Movie title" />
+</div>
+<button (click)="getSearchVal(box.value);getResult()"class="btn btn-outline-success my-2 my-sm-0" >Search</button>
+
+<div *ngIf='showresult' class="searchdiv bg-white">
+  <h1>Results for "{{val}}"</h1>
+  <div *ngFor="let result of results?.Search">
+
+    <h3>{{ result?.Title }} ({{result?.Year}})</h3>
+    <div  class="media">
+
+      <img class="poster mr-3" src="{{result?.Poster}}"  alt="...">
+      <div class="media-body">
+        </div>
+    </div>
+    <nominate class="btn-space"></nominate>
+  </div>
+</div>
+
+<div *ngIf='showresult'>
+  <my-movies></my-movies>
+</div>
