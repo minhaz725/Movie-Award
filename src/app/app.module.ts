@@ -16,6 +16,8 @@ import { MyMoviesComponent } from './my-movies/my-movies.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AuthService} from './auth.service';
+import { SearchComponent } from './search/search.component';
+import { NominateComponent } from './nominate/nominate.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {AuthService} from './auth.service';
     HomeComponent,
     MoviesComponent,
     MyMoviesComponent,
-    LoginComponent
+    LoginComponent,
+    SearchComponent,
+    NominateComponent
   ],
   imports: [
     BrowserModule,

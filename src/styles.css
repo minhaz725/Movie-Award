@@ -2,5 +2,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 body{
   padding-top: 80px;
+  background-color: lightblue;
 
 }
