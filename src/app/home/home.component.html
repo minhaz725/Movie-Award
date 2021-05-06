@@ -1,0 +1,25 @@
+<h1> Welcome to the Shoppies: Movie awards for entrepreneurs</h1>
+
+  <input type="text" #box class="search-bar form-control" placeholder="Search"/>
+  <button (click)="getSearchVal(box.value);getResult()"class="btn btn-outline-success my-2 my-sm-0" >Search</button>
+
+<div *ngIf='showresult'>
+  <h1>{{ result?.Title }} ({{result?.Year}})</h1>
+  <h5>{{ result?.Rated }} | {{ result?.Runtime }} | {{ result?.Genre }} | {{ result?.Released }}</h5>
+  <div  class="media">
+
+    <img class="poster mr-3" src="{{result?.Poster}}"  alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Plot</h5>
+      <p> {{result?.Plot}}</p>
+      <h5 class="mt-0">Director</h5>
+      <p> {{result?.Director}}</p>
+      <h5 class="mt-0">Writer</h5>
+      <p> {{result?.Writer}}</p>
+      <h5 class="mt-0">Stars</h5>
+      <p> {{result?.Actors}}</p>
+      <h5 class="mt-0">Awards</h5>
+      <p> {{result?.Awards}}</p>
+    </div>
+  </div>
+</div>
