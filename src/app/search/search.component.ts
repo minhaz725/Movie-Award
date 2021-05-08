@@ -12,7 +12,7 @@ export class SearchComponent {
   baseuri = 'http://www.omdbapi.com/?s=';
   induri = 'http://www.omdbapi.com/?t=';
   val = 'x-men';
-  filter = '&movies';
+  filter = '&type=movie';
   apikey = '&apikey=98027472';
   results;
   showresult: boolean;

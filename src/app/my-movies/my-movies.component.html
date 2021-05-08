@@ -1,3 +1,16 @@
 <div class="nom">
-  <h4>My Nominations</h4>
+
+  <h4>My Nominations {{len}}/5</h4>
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <h4> <strong>Your List Has been Finished!</strong> </h4>
+    <button type="button" (click)="closeAlert()" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div *ngFor="let movie of movielist">
+
+    <h6> {{movie}} <button (click)="removeMovie(movie)"  class="btn btn-outline-success my-2" >Remove  </button> </h6>
+
+  </div>
+
 </div>

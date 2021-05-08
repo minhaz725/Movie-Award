@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AuthService} from './auth.service';
 import { SearchComponent } from './search/search.component';
 import { NominateComponent } from './nominate/nominate.component';
+import {StoreMoviesService} from './store-movies.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { NominateComponent } from './nominate/nominate.component';
 
   ],
   providers: [
-    AuthService
+    AuthService,
+    StoreMoviesService
   ],
   bootstrap: [AppComponent]
 })
