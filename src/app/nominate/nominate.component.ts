@@ -37,6 +37,7 @@ export class NominateComponent{
     this.button = true;
     this.buttonStatus = 'Nominated';
     this.storeservice.storeMovies(this.data);
+  // zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzza this.storeservice.setitemCount();
   }
 
 }

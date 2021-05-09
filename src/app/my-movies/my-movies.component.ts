@@ -1,4 +1,4 @@
-import {Component, OnInit, OnChanges, SimpleChanges, ChangeDetectorRef, Input} from '@angular/core';
+import {Component, OnInit, OnDestroy, OnChanges, SimpleChanges, ChangeDetectorRef, Input} from '@angular/core';
 import {NominateMoviesService} from '../nominate-movies.service';
 import {StoreMoviesService} from '../store-movies.service';
 import {AuthService} from '../auth.service';
@@ -11,7 +11,7 @@ import {Observable} from 'rxjs/observable';
   templateUrl: './my-movies.component.html',
   styleUrls: ['./my-movies.component.css']
 })
-export class MyMoviesComponent implements OnInit{
+export class MyMoviesComponent implements OnInit, OnDestroy{
   movielist: string[] = [];
   send = true;
   alert: boolean;
@@ -26,11 +26,14 @@ export class MyMoviesComponent implements OnInit{
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.movielist = this.storeservice.getMovies();
-
+    this.len = this.storeservice.getitemCount();
     if (this.len >= 5)
     {
       this.alert = true;
     }
+  }
+  ngOnDestroy(){ //<== added this
+    this.len = this.storeservice.getitemCount();
   }
   // tslint:disable-next-line:typedef
   closeAlert()

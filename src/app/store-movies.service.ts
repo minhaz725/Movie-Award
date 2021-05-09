@@ -37,23 +37,34 @@ export class StoreMoviesService {
     this.movies = this.db.list('/user/' + this.user);
   }
 
+  getitemCount() {
+    if (this.movies !== undefined) {
+      this.item = this.movies.valueChanges().subscribe(data => {
+        this.itemcount = data.length - 2;
+      });
+      console.log(this.itemcount+'from service' + '/n');
+    }
+    return  this.itemcount;
+  }
   // tslint:disable-next-line:typedef
   storeMovies(movie) {
-    if (this.itemcount < 7) {
+    this.getitemCount();
+    if (this.itemcount < 5) {
       //  this.movies.push(movie);
       this.db.object('/user/' + this.user).update({
         [movie]: movie
       });
-      this.itemcount++;
+      // this.itemcount++;
       this.item = this.movies.valueChanges().subscribe(data => {
 
 
         for (let i = 0; i < data.length - 2; i++) {
           this.movielist[i] = data[i];
-          console.log(this.movielist[i]);
+        //  console.log(this.movielist[i]);
         }
-        console.log(data.length + '/n');
+      //  console.log(data.length + '/n');
       });
+      console.log(this.movielist);
     }
   }
 
