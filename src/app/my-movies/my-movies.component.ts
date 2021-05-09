@@ -3,7 +3,7 @@ import {NominateMoviesService} from '../nominate-movies.service';
 import {StoreMoviesService} from '../store-movies.service';
 import {AuthService} from '../auth.service';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
-import {Observable} from 'rxjs/observable';
+
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -11,7 +11,7 @@ import {Observable} from 'rxjs/observable';
   templateUrl: './my-movies.component.html',
   styleUrls: ['./my-movies.component.css']
 })
-export class MyMoviesComponent implements OnInit, OnDestroy{
+export class MyMoviesComponent implements OnInit{
   movielist: string[] = [];
   send = true;
   alert: boolean;
@@ -31,9 +31,6 @@ export class MyMoviesComponent implements OnInit, OnDestroy{
     {
       this.alert = true;
     }
-  }
-  ngOnDestroy(){ //<== added this
-    this.len = this.storeservice.getitemCount();
   }
   // tslint:disable-next-line:typedef
   closeAlert()
