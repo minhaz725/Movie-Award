@@ -4,8 +4,8 @@ Movie-Award is a simple web application that can search OMDB for movies, and all
 
 Here user can:
 
-Search OMDB and display the results (movies only)
-Add a movie from the search results to our nomination list
-View the list of films already nominated
-Remove a nominee from the nomination list
+Search OMDB and display the results (movies only)  
+Add a movie from the search results to our nomination list  
+View the list of films already nominated  
+Remove a nominee from the nomination list  
 
